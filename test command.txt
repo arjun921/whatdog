@@ -1,0 +1,1 @@
+py test_old.py /Users/arjuns/Working_Directory/whatdog/data/test/Pug/n02110958_11458.jpg /Users/arjuns/Working_Directory/whatdog/trained/dog.pb /Users/arjuns/Working_Directory/whatdog/trained/dog_labels.txt
