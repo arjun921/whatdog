@@ -1,1 +1,6 @@
-sudo python /Users/arjuns/Working_Directory/Archive/tensorflow/tensorflow/examples/image_retraining/retrain.py --bottleneck_dir=bottlenecks/ --how_many_training_steps 12000 --model_dir=inception/ --output_graph=trained/dog.pb --output_labels=trained/dog_labels.txt --image_dir data/Images
+#OLD INCEPTION TRAINING
+sudo python /Users/arjuns/Working_Directory/Archive/tensorflow/tensorflow/examples/image_retraining/retrain.py --how_many_training_steps 12000 --model_dir=inception/ --output_graph=trained/dog.pb --output_labels=trained/dog_labels.txt --image_dir data/Images --architecture mobilenet_1.0_224
+
+
+#NEW MOBILE NET TRAINING
+sudo python /Users/arjuns/Working_Directory/Archive/tensorflow/tensorflow/examples/image_retraining/retrain.py --image_dir data/Images --learning_rate=0.0001 --testing_percentage=20 --validation_percentage=20 --train_batch_size=32 --validation_batch_size=-1 --flip_left_right True --random_scale=30 --random_brightness=30 --eval_step_interval=100  --how_many_training_steps=1400 --architecture mobilenet_0.25_128 --output_graph=trained/dog.pb --output_labels=trained/dog_labels.txt && pb push "The Machine is Done Training"
